@@ -1,0 +1,239 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.open {
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.open .overlay {
+  opacity: 1;
+}
+
+.cart {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min(420px, 100%);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xl);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.open .cart {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.closeBtn:active {
+  transform: scale(0.98);
+}
+
+.body {
+  padding: var(--space-md);
+  overflow: auto;
+  flex: 1;
+}
+
+.empty {
+  color: var(--color-text-secondary);
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-surface);
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.itemMeta {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.itemSubMeta {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.itemPrice {
+  margin-top: var(--space-sm);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.qtyBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.qtyBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.qty {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.removeBtn {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.removeBtn:active {
+  transform: scale(0.98);
+}
+
+.removeBtn:hover {
+  background: var(--color-secondary);
+}
+
+.footer {
+  padding: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.totalRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.totalLabel {
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.totalValue {
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.primaryBtn {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  background: var(--color-secondary);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+}
+
+.secondaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ghostBtn {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-secondary);
+}
+
