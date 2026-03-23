@@ -5,12 +5,12 @@ export const siteConfig = {
   headline: 'Doces artesanais feitos com amor',
   subheadline: 'Escolha seus favoritos e envie seu pedido pelo WhatsApp',
   /** DDI + DDD + número, só dígitos (ex.: 5511999999999) — usado em links wa.me */
-  whatsappNumero: '5500000000000',
+  whatsappNumero: '(34) 98412-4194',
   /** Número para exibir na interface (opcional; se vazio, formata a partir do whatsappNumero) */
   whatsappExibicao: '',
   horarioFuncionamento: 'Seg a Sex — 9h às 18h | Sáb — 9h às 13h',
   prazoEncomenda: 'Encomendas com antecedência',
-  instagram: '@docesdamari',
+  instagram: '@doce_da_marimari',
 };
 
 export const categorias: CategoryConfig[] = [

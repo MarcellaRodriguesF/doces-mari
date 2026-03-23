@@ -27,33 +27,30 @@ export function OrderInfo() {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-        <h2 className={styles.title}>Informações</h2>
-        <div className={styles.cards}>
-          <div className={styles.card}>
-            <span className={styles.icon} aria-hidden>
-              💬
-            </span>
-            <h3 className={styles.cardTitle}>Pedidos sob encomenda</h3>
-            <p className={styles.cardText}>
-              Fale conosco pelo WhatsApp para orçamentos, prazos e disponibilidade.
-            </p>
-            <p className={styles.phone}>{numeroExibicao}</p>
-            <a
-              className={styles.waLink}
-              href={linkWhatsAppEncomenda}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abrir WhatsApp
-            </a>
-          </div>
-
-          <div className={styles.card}>
-            <span className={styles.icon} aria-hidden>
-              💳
-            </span>
-            <h3 className={styles.cardTitle}>Forma de pagamento</h3>
-            <p className={styles.cardText}>Aceitamos PIX ou dinheiro.</p>
+        <div className={styles.card}>
+          <h2 className={styles.title}>Informações</h2>
+          <div className={styles.row}>
+            <div className={styles.block}>
+              <h3 className={styles.cardTitle}>Forma de pagamento</h3>
+              <p className={styles.cardText}>Aceitamos PIX ou dinheiro.</p>
+            </div>
+            <div
+              className={styles.separator}
+              role="separator"
+              aria-orientation="vertical"
+            />
+            <div className={styles.block}>
+              <h3 className={styles.cardTitle}>WhatsApp</h3>
+              <p className={styles.phone}>{numeroExibicao}</p>
+              <a
+                className={styles.waLink}
+                href={linkWhatsAppEncomenda}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quero fazer um pedido
+              </a>
+            </div>
           </div>
         </div>
       </div>
