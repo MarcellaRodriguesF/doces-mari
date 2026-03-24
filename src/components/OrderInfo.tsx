@@ -4,11 +4,16 @@ import styles from "./OrderInfo.module.css";
 /** Formata 55 + DDD + 9 dígitos para exibição (+55 (XX) XXXXX-XXXX) */
 function formatarWhatsAppExibicao(digits: string): string {
   const n = digits.replace(/\D/g, "");
-  if (n.length >= 13 && n.startsWith("55")) {
-    const ddd = n.slice(2, 4);
-    const rest = n.slice(4);
+  // Remove o 55 inicial se existir
+  let local = n;
+  if (local.startsWith("55")) {
+    local = local.slice(2);
+  }
+  if (local.length >= 11) {
+    const ddd = local.slice(0, 2);
+    const rest = local.slice(2);
     if (rest.length >= 9) {
-      return `+55 (${ddd}) ${rest.slice(0, 5)}-${rest.slice(5, 9)}`;
+      return `(${ddd}) ${rest.slice(0, 5)}-${rest.slice(5, 9)}`;
     }
   }
   return digits;
